@@ -1,1 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+header {
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 8px 0;
+}
+
+header section:last-child {
+    grid-column: 3;
+}
+
+div {
+    display: grid;
+    grid-template-rows: 10vh 1fr 10vh;
+}
+
+footer {
+    border: 1px solid black;
+    padding: 8px;
+    display: grid;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 6fr 2fr;
+    gap: 8px;
+}
+
+/* Organizando os cards na tela */
+
+.gallery {
+    display: grid;
+    grid-gap: 8px;
+    /* Deixando fixo com 5 col e 2 linhas */
+    /* grid-template-columns: repeat(5, 1fr); */
+    /* grid-template-rows: 1fr 1fr; */
+
+    /* Deixando ele com quebra automática (nesse caso, o próprio grid redesenha o nº de linhas de acordo com o necessário */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, 160px); */
+}
+
+/* Doc do repeat, para verificar auto-fit ou auto-fill e outros valores
+https://developer.mozilla.org/en-US/docs/Web/CSS/repeat
+*/
